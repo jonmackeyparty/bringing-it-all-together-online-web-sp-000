@@ -52,6 +52,16 @@ class Dog
     self.new(id: dog_array[0], name: dog_array[1], breed: dog_array[2])
   end
   
+  def self.find_by_name(name)
+     sql=<<-SQL
+      SELECT * FROM dogs 
+      WHERE name = ? 
+    SQL
+    
+    dog_array = DB[:conn].execute(sql, name)[0]
+    self.new(id: dog_array[0], name: dog_array[1], breed: dog_array[2])
+  end
+  
   def self.check_all(attribute_hash)
     sql=<<-SQL
       SELECT * FROM dogs 
