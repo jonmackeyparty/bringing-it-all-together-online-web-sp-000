@@ -75,29 +75,14 @@ class Dog
     
     DB[:conn].execute(sql, self.name, self.breed, self.id)
   end
-  
-  def self.check_all(attribute_hash)
-    sql=<<-SQL
-      SELECT * FROM dogs 
-      WHERE name = ? 
-    SQL
-    
-    sql2=<<-SQL
-      SELECT * FROM dogs 
-      WHERE breed = ?
-    SQL
-    
-    if 
-      DB[:conn].execute(sql, attribute_hash[:name])[0] == nil && DB[:conn].execute(sql2, attribute_hash[:breed])[0] == nil
-      true 
-    else 
-      false 
-    end 
-  end
-    
-    
-  
+ 
   def self.find_or_create_by(attribute_hash)
+    sql=<<-SQL 
+      SELECT * FROM dogs 
+      WHERE name = ? && breed = ?
+    SQL
+    
+    dog = DB[:conn].execute(sql, attribute_hash[:name], attribute_hash[:breed])[0]
 
       
       
