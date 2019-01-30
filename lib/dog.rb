@@ -25,7 +25,10 @@ class Dog
      DB[:conn].execute("DROP TABLE dogs")
   end
   
-  def save 
+  def save
+    if self.id
+      self.update
+    else
      sql=<<-SQL 
       INSERT INTO dogs (name, breed)
       VALUES (?, ?)
