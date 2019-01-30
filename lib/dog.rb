@@ -46,7 +46,7 @@ class Dog
     SQL
     
     dog_array = DB[:conn].execute(sql, id)[0]
-    dog=self.new(id: id, name: dog_array[0], breed: dog_array[1])
+    dog=Dog.new(id: id, name: dog_array[0], breed: dog_array[1])
     dog
   end
     
