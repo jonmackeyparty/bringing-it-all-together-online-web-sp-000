@@ -46,6 +46,7 @@ class Dog
     SQL
     
     dog_array = DB[:conn].execute(sql, id)[0]
+    binding.pry
     self.new(id: dog_array[0], name: dog_array[1], breed: dog_array[2])
   end
     
