@@ -62,6 +62,9 @@ class Dog
     self.new(id: dog_array[0], name: dog_array[1], breed: dog_array[2])
   end
   
+  def update 
+    
+  
   def self.check_all(attribute_hash)
     sql=<<-SQL
       SELECT * FROM dogs 
