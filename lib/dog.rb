@@ -74,10 +74,10 @@ class Dog
     
   
   def self.find_or_create_by(attribute_hash)
-    
-    
-    else
+    if self.check_all(attribute_hash) == true
       self.create(attribute_hash)
+    else
+      end
     end
   end
     
