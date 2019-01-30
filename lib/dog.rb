@@ -77,6 +77,7 @@ class Dog
     if self.check_all(attribute_hash) == true
       self.create(attribute_hash)
     else
+      
     end
   end
     
