@@ -94,11 +94,10 @@ class Dog
     
   
   def self.find_or_create_by(attribute_hash)
-    if self.check_all(attribute_hash) == true
-      self.create(attribute_hash)
-    else
+
       
-    end
+      
+      self.create(attribute_hash)
   end
   
   def self.new_from_db(row)
