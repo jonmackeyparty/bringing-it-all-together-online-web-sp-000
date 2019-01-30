@@ -52,7 +52,8 @@ class Dog
     self.new(id: dog_array[0], name: dog_array[1], breed: dog_array[2])
   end
   
-  def self.find_or_create_by
+  def self.find_or_create_by(attribute_hash)
+    
     
     
 
