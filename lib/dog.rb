@@ -85,9 +85,10 @@ class Dog
     
     dog = DB[:conn].execute(sql, attribute_hash[:name], attribute_hash[:breed])[0]
     
-    binding.pry
-      
+    if dog = nil
       self.create(attribute_hash)
+    else 
+      
   end
   
   def self.new_from_db(row)
