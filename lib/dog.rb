@@ -79,12 +79,13 @@ class Dog
   def self.find_or_create_by(attribute_hash)
     sql=<<-SQL 
       SELECT * FROM dogs 
-      WHERE name = ? && breed = ?
+      WHERE name = ? 
+      AND breed = ?
     SQL
     
     dog = DB[:conn].execute(sql, attribute_hash[:name], attribute_hash[:breed])[0]
-
-      
+    
+    binding.pry
       
       self.create(attribute_hash)
   end
