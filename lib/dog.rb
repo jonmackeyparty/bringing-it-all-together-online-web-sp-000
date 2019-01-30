@@ -34,6 +34,7 @@ class Dog
   end
   
   def self.create(attribute_hash)
+    dog=Dog.new()
     
     
 
