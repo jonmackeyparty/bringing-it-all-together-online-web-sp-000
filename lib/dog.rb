@@ -52,7 +52,34 @@ class Dog
     self.new(id: dog_array[0], name: dog_array[1], breed: dog_array[2])
   end
   
+  def self.check_all(attribute_hash)
+    sql=<<-SQL
+      SELECT * FROM dogs 
+      WHERE name = ? 
+    SQL
+    
+    sql2=<<-SQL
+      SELECT * FROM dogs 
+      WHERE breed = ?
+    SQL
+    
+    if 
+      DB[:conn].execute(sql, attribute_hash[:name])[0] == nil && DB[:conn].execute(sql2, attribute_hash[:breed])[0] == nil
+      true 
+    else 
+      false 
+    end 
+  end
+    
+    
+  
   def self.find_or_create_by(attribute_hash)
+    
+    
+    else
+      self.create(attribute_hash)
+    end
+  end
     
     
     
