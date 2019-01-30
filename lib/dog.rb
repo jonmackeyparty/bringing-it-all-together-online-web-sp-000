@@ -88,7 +88,7 @@ class Dog
     if dog = nil
       self.create(attribute_hash)
     else 
-      
+      dog
   end
   
   def self.new_from_db(row)
